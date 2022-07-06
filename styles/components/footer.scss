@@ -1,3 +1,5 @@
+@import '../_responsive.scss';
+
 footer{
     background: $dark-blue;
     color: $white;
@@ -49,6 +51,11 @@ footer{
                     &:hover{
                         transform: translateX(0.25rem);
                     }
+
+                    img{
+                        min-width: 1.5rem;
+                        min-height: 1.5rem;
+                    }
                 }
                 &:nth-child(1){
                     h5{
@@ -73,6 +80,57 @@ footer{
         .social{
             display: flex;
             gap: 2rem;
+        }
+    }
+}
+
+@include responsive_1100{
+    footer{
+        .footer_infor{
+            .footer_logo{
+                width: 30%;
+            }
+            .footer_grid{
+                width: 70%;
+            }
+        }
+    }
+}
+@include responsive_1024{
+    footer{
+        .footer_infor{
+            .footer_grid{
+                grid-template-columns: 60% 40%;
+                gap: 1.5rem;
+
+                .footer_cell{
+                    justify-content: start;
+                }
+            }
+        }
+    }
+}
+@include responsive_850{
+    footer{
+        .footer_infor{
+            display: grid;
+            gap: 2rem;
+
+            .footer_grid{
+                grid-template-columns: 75% 25%;
+                gap: 1.5rem;
+            }
+        }
+    }
+}
+@include responsive_574{
+    footer{
+        .footer_infor{
+
+            .footer_grid{
+                grid-template-columns: 100%;
+                gap: 1.5rem;
+            }
         }
     }
 }

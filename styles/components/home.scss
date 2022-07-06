@@ -3,6 +3,7 @@
 @import '../variables';
 @import '../components/header.scss';
 @import '../components/footer.scss';
+@import '../_responsive.scss';
 
 .intro_banner{
         background-image: url('/public/home/big_banner.png');
@@ -80,6 +81,69 @@
         }
 }
 
+@include responsive_900{
+    .intro_banner{
+        .intro_search{
+            form{
+                input{
+                    width: 30rem;
+                    height: 3rem;
+                }
+                button{
+                    width: 8rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+}
+@include responsive_678{
+    .intro_banner{
+        .intro_search{
+            form{
+                input{
+                    width: 24rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+}
+@include responsive_574{
+    .intro_banner{
+        .intro_search{
+            form{
+                input{
+                    width: 18rem;
+                    height: 2.5rem;
+                }
+                button{
+                    width: 6rem;
+                    height: 2.5rem;
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
+@include responsive_430{
+    .intro_banner{
+        .intro_search{
+            form{
+                input{
+                    width: 16rem;
+                    height: 2rem;
+                }
+                button{
+                    width: 5rem;
+                    height: 2.1rem;
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
+
 .company{
     font-family: 'Montserrat';
     padding: 5rem 2rem;
@@ -108,6 +172,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
+        gap: 2rem;
 
         img{
             max-height: 138px;
@@ -157,7 +222,7 @@
     .browse_job_grid{
         z-index: 1;
         display: grid;
-        grid-template-columns: 25rem 25rem;
+        grid-template-columns: auto auto;
         justify-content: center;
         align-items: center;
         gap: 1rem;
@@ -181,8 +246,8 @@
             }
             .job_slot{
                 font-weight: 500;
-                font-size: 14px;
-                line-height: 24px;
+                font-size: 0.75rem;
+                line-height: 1.75rem;
                 border-left: 1px solid $blue-gray-2;
                 width: 23%;
                 text-align: right;
@@ -191,12 +256,53 @@
         }
     }
 }
+@include responsive_900{
+    .browse_job{
+        .browse_job_grid{
+            grid-template-columns: auto;
+
+            div{
+                width: 30rem;
+            }
+        }
+    }
+}
+@include responsive_574{
+    .browse_job{
+        .browse_job_grid{
+            grid-template-columns: auto;
+            
+            div{
+                width: 21rem;
+            }
+        }
+    }
+}
+@include responsive_430{
+    .browse_job{
+        .browse_job_grid{
+            grid-template-columns: auto;
+            
+            div{
+                width: 18rem;
+
+                .job_type{
+                    font-size: 0.8rem;
+                }
+                .job_slot{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
 .feature_job{
     font-family: 'Montserrat';
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 
     h1{
         text-transform: uppercase;
@@ -214,14 +320,17 @@
     }
 
     .feature_job-grid{
-        display: grid;
-        grid-template-columns: repeat(3, minmax(20rem, 25rem));
+        display: flex;
         justify-content: center;
+        padding: 1rem 0;
         gap: 2rem;
+        flex-wrap: wrap;
 
         .job_cell{
             display: flex;
             align-items: center;
+            width: 20rem;
+            max-width: 25rem;
             height: 7rem;
             box-shadow: 0px 0px 24px rgba(0, 25, 54, 0.1);
             border-radius: 8px;
@@ -288,6 +397,7 @@
                 background: $blue-gray-2;
                 justify-content: space-between;
                 padding: 0.75rem;
+                overflow: hidden;
 
                 h2{
                     width: 50%;
@@ -342,6 +452,7 @@
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
+        gap: 2rem;
 
         img{
             max-height: 138px;

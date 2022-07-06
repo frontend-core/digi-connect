@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 header {
-  width: 100%;
+  max-width: 100%;
   height: 3rem;
   background: #F7FBFF;
   display: flex;
@@ -41,7 +41,49 @@ header .navigation div:nth-child(8) a {
   padding: 0.2rem 0.5rem;
   border-radius: 2rem;
 }
+header .mobile_navigation {
+  display: none;
+}
+header .mobile_navigation .navigation_toggle {
+  position: relative;
+  display: inline-block;
+}
+header .mobile_navigation .navigation_toggle input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
 
+@media (max-width: 1100px) {
+  header {
+    padding: 0.25rem 3rem;
+  }
+  header .navigation div {
+    padding: 0 1.3rem;
+  }
+}
+@media (max-width: 1024px) {
+  header {
+    padding: 0.25rem 2rem;
+  }
+  header .navigation div {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 978px) {
+  header .navigation {
+    display: none;
+  }
+  header .mobile_navigation {
+    display: inline-block;
+  }
+  header .mobile_navigation .navigation_toggle {
+    cursor: pointer;
+  }
+}
 footer {
   background: #02203A;
   color: #FFFFFF;
