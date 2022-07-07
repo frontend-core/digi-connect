@@ -4,4 +4,6 @@
 
 ## Preview
 
+* [Demo](https://digi-connect.netlify.app/)
+
 ![Homepage](/public/preview/homepage.jpeg)

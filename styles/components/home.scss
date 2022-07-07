@@ -1,9 +1,9 @@
 @import '../variables';
-@import '../components/header.scss';
-@import '../components/footer.scss';
 @import '../_responsive.scss';
 @import '../abstracts/layout.scss';
 @import '../abstracts/identity.scss';
+@import '../components/header.scss';
+@import '../components/footer.scss';
 
 .intro_banner{
         @include bg-only(background-image, url('/public/home/big_banner.png'));
@@ -32,7 +32,7 @@
             text-align: center;
 
             h1{
-                font-weight: bolder;
+                font-family: Montserrat-bold;
                 font-size: 2rem;
             }
         }
@@ -44,7 +44,7 @@
                 font-size: 0.8rem;
                 font-weight: 600;
                 line-height: 1.5rem;
-                letter-spacing: 0em;
+                letter-spacing: 0.1em;
                 text-align: left;
                 color: $white;
             }
@@ -156,7 +156,7 @@
 
         span{
             color: $orange;
-            font-weight: 800;
+            font-family: Montserrat-bold;
         }
     }
 
@@ -200,13 +200,12 @@
             text-align: center;
             color: $dark-blue;
             letter-spacing: 0.1em;
-            font-weight: 600;
             font-size: 2rem;
             line-height: 2.5rem;
     
             span{
                 color: $blue;
-                font-weight: 800;
+                font-family: Montserrat-bold;
             }
         }
     }
@@ -236,13 +235,13 @@
 
             .job_type{
                 border-left: 2px solid $blue;
-                font-weight: 700;
+                font-family: Montserrat-bold;
                 font-size: 1rem;
                 line-height: 1.5rem;
                 padding: 0 0.5rem;
             }
             .job_slot{
-                font-weight: 500;
+                font-family: Montserrat-regular;
                 font-size: 0.75rem;
                 line-height: 1.75rem;
                 border-left: 1px solid $blue-gray-2;
@@ -311,7 +310,7 @@
 
         span{
             color: $orange;
-            font-weight: bolder;
+            font-family: Montserrat-bold;
         }
     }
 
@@ -352,7 +351,7 @@
 
                 h3{
                     color: $dark-blue;
-                    font-weight: 900;
+                    font-family: Montserrat-bold;
                     font-size: 1rem;
                     line-height: 1.5rem;
                 }
@@ -392,14 +391,14 @@
                 overflow: hidden;
 
                 h2{
-                    width: 50%;
+                    width: 65%;
                     font-weight: 700;
                     font-size: 1.5rem;
                     line-height: 2rem;
                     color: $mid-blue;
 
                     span{
-                        font-weight: bolder;
+                        font-family: Montserrat-bold;
                     }
                 }
 
@@ -430,17 +429,17 @@
 
         span{
             color: $blue;
-            font-weight: 800;
+            font-family: Montserrat-bold;
         }
     }
 
     .sponsor_banner{
         @include flex-y{
-            justify-content: space-evenly;
+            justify-content: center;
         }
         flex-wrap: wrap;
         width: 100%;
-        gap: 2rem;
+        gap: 5rem;
 
         img{
             max-height: 138px;

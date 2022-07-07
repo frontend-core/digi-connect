@@ -74,12 +74,14 @@ footer{
         border-top: 1px solid $white;
 
         p{
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.75rem;
             line-height: 1rem;
         }
         .social{
-            display: flex;
+            @include flex-x{
+                align-items: end;
+            }
             gap: 2rem;
         }
     }
@@ -122,16 +124,43 @@ footer{
                 gap: 1.5rem;
             }
         }
+        .footer_copyright{
+            padding: 1rem 4rem;
+            align-items: end;
+            .social{
+                gap: 1rem;
+            }
+        }
+    }
+}
+@include responsive_678{
+    footer{
+        .footer_infor{
+            .footer_grid{
+                grid-template-columns: 100%;
+                gap: 1.5rem;
+            }
+        }
+        .footer_copyright{
+            padding: 1rem;
+            align-items: end;
+            .social{
+                gap: 1rem;
+            }
+        }
     }
 }
 @include responsive_574{
     footer{
         .footer_infor{
-
             .footer_grid{
                 grid-template-columns: 100%;
                 gap: 1.5rem;
             }
+        }
+        .footer_copyright{
+            flex-direction: column-reverse;
+            gap: 1rem;
         }
     }
 }
