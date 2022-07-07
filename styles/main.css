@@ -517,9 +517,16 @@ footer {
             font-family: Montserrat-semibold;
             font-size: 0.75rem;
             line-height: 0.5rem;
-            color: #E9473F;
             width: fit-content;
             padding: 0.25rem 0.5rem; }
+            .feature_job .feature_job-grid .job_cell div:nth-child(2) div p.red {
+              color: #E9473F; }
+            .feature_job .feature_job-grid .job_cell div:nth-child(2) div p.green {
+              color: #0FB800; }
+            .feature_job .feature_job-grid .job_cell div:nth-child(2) div p.purple {
+              color: #8A3FE9; }
+            .feature_job .feature_job-grid .job_cell div:nth-child(2) div p.orange {
+              color: #FF9900; }
           .feature_job .feature_job-grid .job_cell div:nth-child(2) div img {
             max-height: 1.5rem;
             max-width: 1.5rem; }
