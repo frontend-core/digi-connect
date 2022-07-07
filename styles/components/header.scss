@@ -1,5 +1,5 @@
 @import '../_responsive.scss';
-@import '../abstracts//layout.scss';
+@import '../abstracts/layout.scss';
 
 header{
     max-width: 100%;
@@ -13,7 +13,7 @@ header{
     .navigation{
         display: flex;
         font-size: 0.75rem;
-        font-weight: 600;
+        font-family: Montserrat-medium;
         letter-spacing: 0;
         color: $light-text;
 
@@ -21,8 +21,9 @@ header{
             padding: 0 1.5rem;
             @include flex-y;
 
-            &:nth-child(1){
-                color: $blue;
+            &:hover:not(:nth-child(7)){
+                background: rgba(0, 166, 255, 0.111);
+                border-radius: 2rem;
             }
             &:nth-child(7){
                 @include flex-y;
@@ -40,10 +41,22 @@ header{
             &:nth-child(8){
                 a{
                     border: 1px solid $light-gray-border;
-                    padding: 0.2rem 0.5rem;
+                    padding: 0.2rem 0.5rem 0.2rem 1rem;
                     border-radius: 2rem;
+                    position: relative;
+
+                    span{
+                        position: absolute;
+                        top: 18%;
+                        left: 5%;
+                        opacity: 0.3;
+                    }
                 }
             }
+        }
+        .active{
+            color: $blue;
+            border-radius: 2rem;
         }
     }
     .mobile_navigation{
@@ -51,6 +64,10 @@ header{
 
         .navigation_toggle{
             position: relative;
+
+            #navigation_toggle_close{
+                display: none;
+            }
 
             .mobile_navigation_list{
                 background: $white;
@@ -78,11 +95,16 @@ header{
                         color: $light-text;
                         padding: 1rem 5rem;
                         border-radius: 2rem;
+                        overflow: hidden;
 
                         &:hover{
                             background: $light-blue-bg;
                             color: $blue;
                         }
+                    }
+                    .active{
+                        background: $light-blue-bg;
+                        color: $blue;
                     }
                 }
             }
@@ -95,7 +117,7 @@ header{
         height: 0;
         width: 0;
         border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
+        border-bottom-left-radius: 100rem;
         border-bottom-right-radius: 50%;
     }
     100%{

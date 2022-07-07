@@ -102,9 +102,10 @@ footer{
 @include responsive_1024{
     footer{
         .footer_infor{
+            padding: 2rem;
             .footer_grid{
-                grid-template-columns: 60% 40%;
-                gap: 1.5rem;
+                grid-template-columns: 30% 20% 20% 20%;
+                gap: 1rem;
 
                 .footer_cell{
                     justify-content: start;
@@ -118,10 +119,15 @@ footer{
         .footer_infor{
             display: grid;
             gap: 2rem;
+            padding: 1.2rem;
+
+            .footer_logo{
+                width: 100%;
+            }
 
             .footer_grid{
-                grid-template-columns: 75% 25%;
-                gap: 1.5rem;
+                width: 100%;
+                grid-template-columns: 55% 13% 15% 17%;
             }
         }
         .footer_copyright{
@@ -137,8 +143,8 @@ footer{
     footer{
         .footer_infor{
             .footer_grid{
-                grid-template-columns: 100%;
-                gap: 1.5rem;
+                grid-template-columns: 75% 25%;
+                grid-auto-flow: row;
             }
         }
         .footer_copyright{
@@ -154,13 +160,26 @@ footer{
     footer{
         .footer_infor{
             .footer_grid{
-                grid-template-columns: 100%;
-                gap: 1.5rem;
+                grid-template-columns: 75% 25%;
             }
         }
         .footer_copyright{
             flex-direction: column-reverse;
             gap: 1rem;
+        }
+    }
+}
+@include responsive_430{
+    footer{
+        .footer_infor{
+            .footer_grid{
+                grid-template-columns: 30% 40% 30%;
+
+                .footer_cell:nth-child(1){
+                    grid-column: 1 / 4;
+                    grid-row: 1 / 4;
+                }
+            }
         }
     }
 }

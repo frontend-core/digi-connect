@@ -27,15 +27,16 @@ header {
   header .navigation {
     display: flex;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-family: Montserrat-medium;
     letter-spacing: 0;
     color: #02203A; }
     header .navigation div {
       padding: 0 1.5rem;
       display: flex;
       align-items: center; }
-      header .navigation div:nth-child(1) {
-        color: #0091EB; }
+      header .navigation div:hover:not(:nth-child(7)) {
+        background: rgba(0, 166, 255, 0.111);
+        border-radius: 2rem; }
       header .navigation div:nth-child(7) {
         display: flex;
         align-items: center;
@@ -48,12 +49,23 @@ header {
           font-weight: 600; }
       header .navigation div:nth-child(8) a {
         border: 1px solid #e9e9e9;
-        padding: 0.2rem 0.5rem;
-        border-radius: 2rem; }
+        padding: 0.2rem 0.5rem 0.2rem 1rem;
+        border-radius: 2rem;
+        position: relative; }
+        header .navigation div:nth-child(8) a span {
+          position: absolute;
+          top: 18%;
+          left: 5%;
+          opacity: 0.3; }
+    header .navigation .active {
+      color: #0091EB;
+      border-radius: 2rem; }
   header .mobile_navigation {
     display: none; }
     header .mobile_navigation .navigation_toggle {
       position: relative; }
+      header .mobile_navigation .navigation_toggle #navigation_toggle_close {
+        display: none; }
       header .mobile_navigation .navigation_toggle .mobile_navigation_list {
         background: #FFFFFF;
         position: fixed;
@@ -77,17 +89,21 @@ header {
             letter-spacing: 0;
             color: #02203A;
             padding: 1rem 5rem;
-            border-radius: 2rem; }
+            border-radius: 2rem;
+            overflow: hidden; }
             header .mobile_navigation .navigation_toggle .mobile_navigation_list ul li:hover {
               background: #F7FBFF;
               color: #0091EB; }
+          header .mobile_navigation .navigation_toggle .mobile_navigation_list ul .active {
+            background: #F7FBFF;
+            color: #0091EB; }
 
 @keyframes mobile_nav_animate {
   0% {
     height: 0;
     width: 0;
     border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-bottom-left-radius: 100rem;
     border-bottom-right-radius: 50%; }
   100% {
     height: 90%;
@@ -175,18 +191,23 @@ footer {
   footer .footer_infor .footer_grid {
     width: 70%; } }
 @media (max-width: 1024px) {
-  footer .footer_infor .footer_grid {
-    grid-template-columns: 60% 40%;
-    gap: 1.5rem; }
-    footer .footer_infor .footer_grid .footer_cell {
-      justify-content: start; } }
+  footer .footer_infor {
+    padding: 2rem; }
+    footer .footer_infor .footer_grid {
+      grid-template-columns: 30% 20% 20% 20%;
+      gap: 1rem; }
+      footer .footer_infor .footer_grid .footer_cell {
+        justify-content: start; } }
 @media (max-width: 850px) {
   footer .footer_infor {
     display: grid;
-    gap: 2rem; }
+    gap: 2rem;
+    padding: 1.2rem; }
+    footer .footer_infor .footer_logo {
+      width: 100%; }
     footer .footer_infor .footer_grid {
-      grid-template-columns: 75% 25%;
-      gap: 1.5rem; }
+      width: 100%;
+      grid-template-columns: 55% 13% 15% 17%; }
   footer .footer_copyright {
     padding: 1rem 4rem;
     align-items: end; }
@@ -194,8 +215,8 @@ footer {
       gap: 1rem; } }
 @media (max-width: 678px) {
   footer .footer_infor .footer_grid {
-    grid-template-columns: 100%;
-    gap: 1.5rem; }
+    grid-template-columns: 75% 25%;
+    grid-auto-flow: row; }
   footer .footer_copyright {
     padding: 1rem;
     align-items: end; }
@@ -203,11 +224,16 @@ footer {
       gap: 1rem; } }
 @media (max-width: 574px) {
   footer .footer_infor .footer_grid {
-    grid-template-columns: 100%;
-    gap: 1.5rem; }
+    grid-template-columns: 75% 25%; }
   footer .footer_copyright {
     flex-direction: column-reverse;
     gap: 1rem; } }
+@media (max-width: 430px) {
+  footer .footer_infor .footer_grid {
+    grid-template-columns: 30% 40% 30%; }
+    footer .footer_infor .footer_grid .footer_cell:nth-child(1) {
+      grid-column: 1 / 4;
+      grid-row: 1 / 4; } }
 .intro_banner {
   background-image: url("/public/home/big_banner.png");
   background-size: cover;
@@ -295,6 +321,14 @@ footer {
     width: 5rem;
     height: 2.1rem;
     font-size: 0.6rem; } }
+@media (max-width: 376px) {
+  .intro_banner .intro_search form {
+    display: grid;
+    gap: 0.75rem; }
+    .intro_banner .intro_search form input {
+      width: 100%; }
+    .intro_banner .intro_search form button {
+      width: 100%; } }
 .company {
   padding: 5rem 2rem;
   display: flex;
@@ -358,6 +392,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: 0.5rem;
     grid-template-columns: auto auto; }
     .browse_job .browse_job_grid div {
       width: 25rem;
@@ -428,7 +463,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
     gap: 2rem;
     flex-wrap: wrap; }
     .feature_job .feature_job-grid .job_cell {
@@ -463,7 +498,8 @@ footer {
           color: #02203A;
           font-family: Montserrat-bold;
           font-size: 1rem;
-          line-height: 1.5rem; }
+          line-height: 1.5rem;
+          overflow: hidden; }
         .feature_job .feature_job-grid .job_cell div:nth-child(2) p {
           font-style: normal;
           font-weight: 600;
@@ -478,7 +514,7 @@ footer {
           .feature_job .feature_job-grid .job_cell div:nth-child(2) div p {
             border-radius: 4px;
             background: #F7FBFF;
-            font-weight: bolder;
+            font-family: Montserrat-semibold;
             font-size: 0.75rem;
             line-height: 0.5rem;
             color: #E9473F;

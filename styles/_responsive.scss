@@ -1,3 +1,4 @@
+$res_376 : "(max-width: 376px)";
 $res_430 : "(max-width: 430px)";
 $res_574 : "(max-width: 574px)";
 $res_678 : "(max-width: 678px)";
@@ -6,6 +7,12 @@ $res_900 : "(max-width: 900px)";
 $res_978 : "(max-width: 978px)";
 $res_1024 : "(max-width: 1024px)";
 $res_1100 : "(max-width: 1100px)";
+
+@mixin responsive_376() {
+    @media #{$res_376} {
+        @content;
+    }
+}
 
 @mixin responsive_430() {
     @media #{$res_430} {
