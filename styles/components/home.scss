@@ -239,17 +239,16 @@
             height: 3.5rem;
             color: $dark-blue;
             background: $white;
+            cursor: pointer;
             @include flex-y{
                 justify-content: space-between;
             }
             border-radius: 0.5rem;
-            @include light-shadown{
-                &:hover{
-                    .job_type{
-                        border-left-width: 3px;
-                    }
+            &:hover{
+                .job_type{
+                    border-left-width: 3px;
                 }
-            };
+            }
 
             .job_type{
                 border-left: 2px solid $blue;
@@ -445,10 +444,10 @@
 }
 
 .sponsor{
-    padding: 0 2rem 3rem 2rem;
+    padding: 0 2rem 4rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
 
     h1{
         text-transform: uppercase;
