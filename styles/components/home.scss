@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../_variables.scss';
 @import '../_responsive.scss';
 @import '../abstracts/layout.scss';
 @import '../abstracts/identity.scss';
@@ -393,10 +393,23 @@
                         font-family: Montserrat-semibold;
                         font-size: 0.75rem;
                         line-height: 0.5rem;
-                        color: $red;
                         width: fit-content;
                         padding: 0.25rem 0.5rem;
+
+                        &.red{
+                            color: $red;
+                        }
+                        &.green{
+                            color: $green;
+                        }
+                        &.purple{
+                            color: $purple;
+                        }
+                        &.orange{
+                            color: $orange;
+                        }
                     }
+                    
                     img{
                         max-height: 1.5rem;
                         max-width: 1.5rem;
