@@ -4,12 +4,11 @@ header {
   height: 3rem;
   background: #F7FBFF;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0.25rem 5rem; }
   header .navigation {
     display: flex;
-    font-family: 'Montserrat';
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0;
@@ -95,8 +94,7 @@ header {
       cursor: pointer; } }
 footer {
   background: #02203A;
-  color: #FFFFFF;
-  font-family: 'Montserrat'; }
+  color: #FFFFFF; }
   footer .footer_infor {
     display: flex;
     padding: 2rem 5rem; }
@@ -113,9 +111,9 @@ footer {
       grid-template-columns: 25% 25% 25% 25%;
       align-items: start; }
       footer .footer_infor .footer_grid .footer_cell {
+        height: fit-content;
         display: grid;
         justify-content: center;
-        height: fit-content;
         align-items: start; }
         footer .footer_infor .footer_grid .footer_cell h5 {
           font-weight: bolder;
@@ -140,6 +138,7 @@ footer {
           margin-left: 1.75rem; }
   footer .footer_copyright {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 1rem 5rem;
     border-top: 1px solid #FFFFFF; }
@@ -179,13 +178,12 @@ footer {
   background-repeat: no-repeat;
   height: 35rem;
   position: relative;
-  display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
-  gap: 5rem;
-  font-family: 'Montserrat'; }
+  gap: 5rem; }
   .intro_banner::after {
     content: '';
     position: absolute;
@@ -262,7 +260,6 @@ footer {
     height: 2.1rem;
     font-size: 0.6rem; } }
 .company {
-  font-family: 'Montserrat';
   padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -280,9 +277,9 @@ footer {
       font-weight: 800; }
   .company .company_banner {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
     gap: 2rem; }
     .company .company_banner img {
@@ -291,7 +288,6 @@ footer {
 
 .browse_job {
   background: #F9FCFF;
-  font-family: 'Montserrat';
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -299,15 +295,15 @@ footer {
   position: relative; }
   .browse_job::after {
     position: absolute;
-    content: '';
+    z-index: 0;
     background-image: url("/public/home/browse_job/wave_left.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 0; }
+    height: 100%; }
   .browse_job .browse_job-title {
     z-index: 1; }
     .browse_job .browse_job-title h1 {
@@ -324,19 +320,25 @@ footer {
   .browse_job .browse_job_grid {
     z-index: 1;
     display: grid;
-    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
-    gap: 1rem; }
+    gap: 1rem;
+    grid-template-columns: auto auto; }
     .browse_job .browse_job_grid div {
       width: 25rem;
       height: 3.5rem;
       color: #02203A;
       background: #FFFFFF;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-radius: 0.5rem; }
+      justify-content: space-between;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 24px rgba(0, 25, 54, 0.1);
+      cursor: pointer; }
+      .browse_job .browse_job_grid div:hover .job_type {
+        border-left-width: 3px; }
+      .browse_job .browse_job_grid div:hover {
+        box-shadow: 2px 2px 24px rgba(0, 25, 54, 0.2); }
       .browse_job .browse_job_grid div .job_type {
         border-left: 2px solid #0091EB;
         font-weight: 700;
@@ -372,7 +374,6 @@ footer {
       .browse_job .browse_job_grid div .job_slot {
         font-size: 0.8rem; } }
 .feature_job {
-  font-family: 'Montserrat';
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -391,20 +392,23 @@ footer {
   .feature_job .feature_job-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1rem 0;
     gap: 2rem;
     flex-wrap: wrap; }
     .feature_job .feature_job-grid .job_cell {
       display: flex;
       align-items: center;
-      width: 20rem;
+      width: 22rem;
       max-width: 25rem;
       height: 7rem;
       box-shadow: 0px 0px 24px rgba(0, 25, 54, 0.1);
+      cursor: pointer;
       border-radius: 8px;
       padding: 0.5rem;
-      gap: 0.75rem;
-      cursor: pointer; }
+      gap: 0.75rem; }
+      .feature_job .feature_job-grid .job_cell:hover {
+        box-shadow: 2px 2px 24px rgba(0, 25, 54, 0.2); }
       .feature_job .feature_job-grid .job_cell div:nth-child(1) {
         display: flex;
         justify-content: center;
@@ -433,8 +437,8 @@ footer {
           color: #708496; }
         .feature_job .feature_job-grid .job_cell div:nth-child(2) div {
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          justify-content: space-between;
           padding: 0.2rem; }
           .feature_job .feature_job-grid .job_cell div:nth-child(2) div p {
             border-radius: 4px;
@@ -465,11 +469,8 @@ footer {
           width: min-content;
           display: flex;
           align-items: end; }
-      .feature_job .feature_job-grid .job_cell:hover {
-        box-shadow: 2px 2px 24px rgba(0, 25, 54, 0.2); }
 
 .sponsor {
-  font-family: 'Montserrat';
   padding: 0 2rem 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -487,9 +488,9 @@ footer {
       font-weight: 800; }
   .sponsor .sponsor_banner {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
     gap: 2rem; }
     .sponsor .sponsor_banner img {
@@ -501,7 +502,11 @@ footer {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  user-select: none; }
+
+body {
+  font-family: 'Montserrat'; }
 
 a {
   color: inherit;

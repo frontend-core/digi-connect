@@ -1,9 +1,9 @@
 @import '../_responsive.scss';
+@import '../abstracts/layout.scss';
 
 footer{
     background: $dark-blue;
     color: $white;
-    font-family: 'Montserrat';
 
     .footer_infor{
         display: flex;
@@ -26,10 +26,10 @@ footer{
             align-items: start;
 
             .footer_cell{
-                display: grid;
-                justify-content: center;
                 height: fit-content;
-                align-items: start;
+                @include grid-x{
+                    align-items: start;
+                } 
 
                 h5{
                     font-weight: bolder;
@@ -67,8 +67,9 @@ footer{
     }
 
     .footer_copyright{
-        display: flex;
-        justify-content: space-between;
+        @include flex-y{
+            justify-content: space-between;
+        }        
         padding: 1rem 5rem;
         border-top: 1px solid $white;
 
